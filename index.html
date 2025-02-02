@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.4/tsparticles.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tsParticles.load("tsparticles", {
+                background: { color: "#121024" },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onClick: { enable: false, mode: "push" },
+                        // onHover: { enable: true, mode: "repulse" },
+                        resize: true
+                    },
+                    modes: {
+                        push: { quantity: 4 },
+                        repulse: { distance: 200, duration: 0.4 }
+                    }
+                },
+                particles: {
+                    color: { value: "#ffffff" },
+                    links: { color: "#ffffff", distance: 210, enable: true, opacity: 0.5, width: 1 },
+                    move: { enable: true, speed: 1, outModes: { default: "bounce" } },
+                    rotate: { value: 0, random: true, direction: "clockwise", animation: { enable: true, speed: 12, sync: true } },
+                    number: { density: { enable: true, area: 800 }, value: 80 },
+                    opacity: { value: 1 },
+                    shape: { type: "image", image: { src: "https://res.cloudinary.com/dttrs30gt/image/upload/v1698163629/products/IMG_6020_hszal1.webp" } },
+                    size: { value: { min: 3, max: 17 } }
+                },
+                detectRetina: true
+            });
+        });
+    </script>
+    <script>
+          function opesnDialog(e) {
+            const button = e.currentTarget;
+            const title = button.getAttribute("data-judul");
+            const detail = button.getAttribute("data-detail");
+            const image = button.getAttribute("data-gambar");
+            
+            document.getElementById("dialog-title").textContent = title;
+            document.getElementById("dialog-detail").textContent = detail;
+            document.getElementById("dialog-image").src = image;
+            
+            document.getElementById("modal-dialog").showModal();
+        }
+
+        function closeDialog() {
+            document.getElementById("modal-dialog").close();
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-black text-white relative">
+    <dialog id="modal-dialog" class="fixed text-white rounded-lg inset-0 bg-gray-900 flex items-center justify-center p-4">
+        <div class="w-full max-w-2xl relative">
+            <button onclick="closeDialog()" class="absolute top-6 right-4 text-gray-600 hover:text-gray-900 text-2xl">
+                &times;
+            </button>
+            <h2 id="dialog-title" class="text-2xl font-semibold mb-4"></h2>
+            <img id="dialog-image" src="" alt="" class="w-full h-60 object-cover rounded-md mb-6">
+            <p id="dialog-detail" class="text-gray-200 mb-6 text-lg"></p>
+            <button onclick="closeDialog()" class="px-6 py-3 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 w-full text-lg">
+                Close
+            </button>
+        </div>
+    </dialog>
+
+    <div id="tsparticles" class="absolute inset-0 z-0"></div>
+    <div class="relative z-10 mx-auto">
+        <div class="bg-[#121024] p-6 flex justify-between">
+            <img src="dimas.jpeg" alt="Profile" style="width: 220px; height: 250px;" class="rounded-lg object-cover border-4 border-gray-700 mb-4">
+            <div class="ml-4">
+                <h1 class="text-xl font-bold mb-2" style="font-size: 40px;">Dimas Indra Pratama</h1>
+                <h2>Software Engineer</h2>
+                <p class="text-gray-400 text-sm">
+                    As a passionate and skilled software developer, I have a deep interest in various aspects of technology. A strong educational background in computer science and relevant work experience refects my dedication to professionalism and quality in 
+                    software development. My job involves mastering the latest programming languages, frameworks and tools to create innovative and efcient solutions.  With a creative mind, I'm always looking for ways to improve product and development 
+                    processes. I am committed to continuously learning and staying up to date with the latest developments in the world of technology, and am ready to contribute to the 
+                    industry with my dedication and valuable skills.
+                </p>
+                <div class="mt-10 text-left">
+                    <h2 class="text-lg font-semibold">Skills</h2>
+                    <div class="flex justify-left items-center text-center flex-wrap gap-4 mt-4">
+                        <div>
+                            <img class="w-12 h-12 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" alt="">
+                            <p>Docker</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_MTqBgu6g6VEe39__JSrc6j7i5JDspsxVH8rAU-9680X8zadKKWvjY6s2MT9cpomB2c&usqp=CAU" alt="">
+                            <p>Django</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://indradewangkara.my.id/wp-content/uploads/2024/05/Laravel-Logo.png" alt="">
+                            <p>Laravel</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png" alt="">
+                            <p>Flutter</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoW3g9hjXIasgon-kpzz-lD9z4SsalyPbZA&s" alt="">
+                            <p>React Js</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://miro.medium.com/v2/resize:fit:720/1*_bJ2z2NRfTncHAv5UjUxwA.jpeg" alt="">
+                            <p>Next Js</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://linuxiac.b-cdn.net/wp-content/uploads/2020/06/ubuntu-linux.jpg" alt="">
+                            <p>Linux</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e8289b4b17b7223e4d1cbd_5e7b0337d6f55f2d81ac9543_Blog20post20feature20img2014.jpeg?fit=750%2C500&ssl=1" alt="">
+                            <p>Jquery</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://www.ibm.com/content/dam/adobe-cms/instana/media_logo/Azure-SQL-Server-Monitoring.component.complex-narrative-xl.ts=1724331040305.png/content/adobe-cms/id/id/products/instana/supported-technologies/microsoft-sql-server-monitoring/_jcr_content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative/logoimage" alt="">
+                            <p>SQL</p>
+                        </div>
+                        <div>
+                            <img class="w-13 h-12 object-fit rounded-full" src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png" alt="">
+                            <p>Mongo DB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-8">
+            <h2 class="text-lg font-semibold text-center bg-shadow" style="font-size: 40px;">All Projects</h2>
+            <p class="text-gray-400 text-sm mt-2 max-w-lg">
+                A passionate and skilled software developer, I have a deep interest in various aspects of technology...
+            </p>
+            <div class="mt-10">
+                <div class="grid grid-cols-3 gap-4 mt-4">
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="PHLN.png"  alt="">
+                        <div class="bg-gray-900 p-4">
+                            PHLN
+                            <div class="flex justify-between">
+                                <button class="underline cursor-pointer" 
+                                    onclick="openDialog(event)" 
+                                    data-detail="fkwlkfwlkwfaknwf" 
+                                    data-judul="HRIS" 
+                                    data-gambar="./PHLN.png" >
+                                    Detail Project
+                                </button>
+                                <div class="flex">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_MTqBgu6g6VEe39__JSrc6j7i5JDspsxVH8rAU-9680X8zadKKWvjY6s2MT9cpomB2c&usqp=CAU" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e8289b4b17b7223e4d1cbd_5e7b0337d6f55f2d81ac9543_Blog20post20feature20img2014.jpeg?fit=750%2C500&ssl=1" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="PIPK.png"  alt="">
+                        <div class="bg-gray-900 p-4">
+                            PIPK
+                             <div class="flex justify-between">
+                                <p class="underline cursor-pointer" >Detail Project</p>
+                                <div class="flex">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_MTqBgu6g6VEe39__JSrc6j7i5JDspsxVH8rAU-9680X8zadKKWvjY6s2MT9cpomB2c&usqp=CAU" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e8289b4b17b7223e4d1cbd_5e7b0337d6f55f2d81ac9543_Blog20post20feature20img2014.jpeg?fit=750%2C500&ssl=1" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="HRIS.png"  alt="">
+                        <div class="bg-gray-900 p-4">
+                            HRIS
+                             <div class="flex justify-between">
+                                <p class="underline cursor-pointer" >Detail Project</p>
+                                <div class="flex">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_MTqBgu6g6VEe39__JSrc6j7i5JDspsxVH8rAU-9680X8zadKKWvjY6s2MT9cpomB2c&usqp=CAU" alt="">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoW3g9hjXIasgon-kpzz-lD9z4SsalyPbZA&s" alt="">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="Salsa.png"  alt="">
+                        <div class="bg-gray-900 p-4">
+                            Salsabila Store
+                             <div class="flex justify-between">
+                                <p class="underline cursor-pointer" >Detail Project</p>
+                                <div class="flex">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://miro.medium.com/v2/resize:fit:720/1*_bJ2z2NRfTncHAv5UjUxwA.jpeg" alt="">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoW3g9hjXIasgon-kpzz-lD9z4SsalyPbZA&s" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png" alt="">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="lolab.png"  alt="">
+                        <div class="bg-gray-900 p-4">
+                            Lolab Customer
+                             <div class="flex justify-between">
+                                <p class="underline cursor-pointer" >Detail Project</p>
+                                <div class="flex">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" alt="">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoW3g9hjXIasgon-kpzz-lD9z4SsalyPbZA&s" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="foodestate.png" alt="">
+                        <div class="bg-gray-900 p-4">
+                            Food Estate - Sawahku
+                            <div class="flex justify-between">
+                                <p class="underline cursor-pointer" >Detail Project</p>
+                                <div class="flex">
+                                    <img class="w-6 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAJH4R87uV3Rvncs3L3urjeNESAfJGTMTrA&s" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_MTqBgu6g6VEe39__JSrc6j7i5JDspsxVH8rAU-9680X8zadKKWvjY6s2MT9cpomB2c&usqp=CAU" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e8289b4b17b7223e4d1cbd_5e7b0337d6f55f2d81ac9543_Blog20post20feature20img2014.jpeg?fit=750%2C500&ssl=1" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-6 rounded-lg text-left shadow-lg">
+                        <img src="desktop_1.jpg"  alt="">
+                        <div class="bg-gray-900 p-4">
+                            Sobat Covid
+                            <div class="flex justify-between">
+                                <p class="underline cursor-pointer" >Detail Project</p>
+                                <div class="flex">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://indradewangkara.my.id/wp-content/uploads/2024/05/Laravel-Logo.png" alt="">
+                                    <img class="w-9 h-6 m-2 object-fit rounded-full" src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e8289b4b17b7223e4d1cbd_5e7b0337d6f55f2d81ac9543_Blog20post20feature20img2014.jpeg?fit=750%2C500&ssl=1" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <footer class="bg-black text-center p-6 text-gray-400 py-4 mt-10">
+            &copy; 2025 Dimas Indra Pratama. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
